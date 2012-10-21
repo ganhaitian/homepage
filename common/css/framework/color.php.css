@@ -1,0 +1,71 @@
+
+body { 	background:#fff url(http://welovenature.hostoi.com/wp-content/themes/typo_new/styling/img/lil_fiber.png) top center repeat scroll; }
+.the_content p, .the_content ul, .the_content ol, .the_content {
+	font: normal 16px/1.5 "Georgia", serif; 
+	color:#161616;
+}
+ul#page-number li a:hover, footer, header, a.read_more:hover, .form-submit #submit:hover, input[type="submit"]:hover, button:hover { 
+	background-color:#161616; 
+}
+h1#page-title { 
+	border-bottom:1px solid #e80042; 
+}
+.my_tweets ul li span a { 
+	color:#e80042 !important; 
+}
+nav {  
+}
+ul#page-number li a.active, nav ul li a:hover, .meta ul.date, .meta div.comments:hover, a.read_more, .form-submit #submit, button, .sep, .meta_hr, .footer_hr, .footer_blog_left, .footer_blog_right, input[type="submit"], .current-menu-item a { 
+	background-color:#e80042; 
+}
+.meta, .meta_div a {
+	font-family: "Georgia", serif;
+	color:#161616;
+}
+h1.title {
+	font: bold 32px/1.5 "Georgia", serif !important;
+}
+h1.title a, h1, h2, h3, h4, h5, h6 {
+	color:#161616;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Georgia", serif;
+}
+body, .meta, a.read_more, #slogan h1.slogan {
+	font-family: "Georgia", serif;
+}
+h1.title a:hover, .meta_div a:hover, section ul.archives_list li a, .homepage, 
+footer .copy a, section ul.archives_list li a, .homepage, footer .fmenu ul li a:hover, #wp-calendar td a, 
+.my_tweets ul li span a, .widget_recent_entries ul li a:hover, .widget_recent_comments ul li a, footer .fmenu .current-menu-item a, .tagcloud a:hover { 
+	color:#e80042; 
+}
+h1.slogan {
+	color:#fff;
+}
+footer .fmenu .current-menu-item a {
+	text-decoration:underline;
+	background:none;
+}
+.full {
+	border-bottom:4px solid #e80042; 
+}
+.color li a:hover, .color {
+	color:#161616;
+}
+#sidebar, #sidebar p, #sidebar ul, #sidebar ul li, #sidebar ul li a, #sidebar a, #sidebar #s {
+	font: normal 12px/24px "Georgia", serif; 
+	color:#161616;
+}
+footer, footer p, footer ul, footer ul li, footer ul li a, footer a, footer #s, footer .fmenu ul li a, footer table {
+	font: normal 12px/24px "Georgia", serif; 
+	color:#fff;
+}
+footer h4 {
+	color:#fff;
+}
+#sidebar h4 {
+    border-bottom: 1px solid rgba(219, 219, 219, 1);
+}
+<!-- Hosting24 Analytics Code -->
+<script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
+<!-- End Of Analytics Code -->
