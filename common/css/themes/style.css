@@ -27,7 +27,6 @@ a {
 
 body {
 	font: 16px/24px 'Georgia', 'Times New Roman', 'Times', serif;
-	height: 100%;
 	background:url(styling/img/lil_fiber.png) repeat;
 }
 
@@ -898,3 +897,18 @@ p iframe {
     z-index: 20001;
 }
 
+#ctrlpanel-sidebar{
+	background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 10px 0 10px 20px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    right:0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 26px;
+    z-index: 999;
+}
+
+#ctrlpanel-sidebar-ctrl{
+	
+}
