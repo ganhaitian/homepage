@@ -66,6 +66,15 @@
 							}
 						});
 				});
+				
+				$('.open-editor-btn').bind('mouseover',
+				function(){
+					$('header').toggleClass('editor-ready');
+				}).bind('mouseout',function(){
+					$('header').toggleClass('editor-ready');
+				}).bind('click',function(){
+					$('.editor-panel').show().addClass('editor-panel-open');
+				});
 		 });
 		</script>
 		
@@ -100,6 +109,10 @@
 					</nav>
 				</div>
 			</header>
+			<div class="editor-panel" ></div>
+			<div class="open-editor-btn" >
+				<a></a>
+			</div>
 			<div class="container main clearfix">
 				<div id="main">
 					<div class="center">
