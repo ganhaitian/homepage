@@ -91,19 +91,19 @@
 						<div class="menu-menu-container">
 							<ul id="menu-menu" class="menu">
 							<?php
-							$result=mysql_query("select * from g_homepage_menu");
-							$menu_count=0;
-							$current_menu=0;
-							while($row=mysql_fetch_array($result)){
-								if($menu_count==0){
-									$current_menu=$row['pk_menu'];
-									echo '<li id="menu-item-'.$row['pk_menu'].'" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-88"><a href="'.$row['menu_url'].'">'.$row['menu_name'].'</a></li>';
+								$result=mysql_query("select * from g_homepage_menu");
+								$menu_count=0;
+								$current_menu=0;
+								while($row=mysql_fetch_array($result)){
+									if($menu_count==0){
+										$current_menu=$row['pk_menu'];
+										echo '<li id="menu-item-'.$row['pk_menu'].'" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-88"><a href="'.$row['menu_url'].'">'.$row['menu_name'].'</a></li>';
+									}
+									else
+										echo '<li id="menu-item-'.$row['pk_menu'].'" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188"><a href="'.$row['menu_url'].'">'.$row['menu_name'].'</a></li>';
+									$menu_count=$menu_count+1;
 								}
-								else
-									echo '<li id="menu-item-'.$row['pk_menu'].'" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188"><a href="'.$row['menu_url'].'">'.$row['menu_name'].'</a></li>';
-								$menu_count=$menu_count+1;
-							}
-						?>
+							?>
 							</ul>
 						</div>			
 					</nav>
