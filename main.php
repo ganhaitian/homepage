@@ -73,7 +73,25 @@
 				}).bind('mouseout',function(){
 					$('header').toggleClass('editor-ready');
 				}).bind('click',function(){
-					$('.editor-panel').show().addClass('editor-panel-open');
+					//$('.editor-panel').show().addClass('editor-panel-open');
+					if($('.editor-panel').css('height')=='0px'){
+						$('.editor-panel')
+						.addClass('editor-panel-open')
+						.animate({
+							height:'400px'
+						},'slow',function(){
+							$('.open-editor-btn a').css('background-image','url("./common/css/themes/styling/img/arrow-up.png")');
+						});
+					}
+					else{
+						$('.editor-panel')
+						.removeClass('editor-panel-open')
+						.animate({
+							height:'0px'
+						},'slow',function(){
+							$('.open-editor-btn a').css('background-image','url("./common/css/themes/styling/img/arrow-next.png")');
+						});					
+					}
 				});
 		 });
 		</script>
