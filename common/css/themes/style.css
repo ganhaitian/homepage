@@ -870,18 +870,24 @@ p iframe {
 
 .blog-post{
 	width:100%;
+	display:NONE;
+	margin:0 auto;
+	width:940px;
+	padding-top:35px;
+}
+
+.text-editor{
+	width:500px;	
 }
 
 .blog-post-mask{
 	z-index:20000;
 	background:#CCCCCC;
-	height:160px;	
+	height:322px;	
 	opacity:0.4;
 	position:absolute;
-	top:0px;
-	left:45px;
 	opacity:0.8;
-	width:568px;
+	width:512px;
 	display:none;
 }
 
@@ -889,10 +895,10 @@ p iframe {
     background-image: url("styling/img/loading.gif");
     background-repeat: no-repeat;
     height: 16px;
-    left: 280px;
+    left: 50%;
     padding-left: 16px;
     position: absolute;
-    top: 70px;
+    top: 47%;
     width: 16px;
     z-index: 20001;
 }

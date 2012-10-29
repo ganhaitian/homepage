@@ -31,6 +31,7 @@
 		<link rel='stylesheet' id='jcarousel-css'  href='./common/css/shortcodes-ultimate/jcarousel.css' type='text/css' media='all' />
 		<link rel='stylesheet' id='shortcodes-ultimate-css'  href='./common/css/shortcodes-ultimate/style.css' type='text/css' media='all' />
 		<script type='text/javascript' src='./common/js/jquery-1.7.2.js'></script>
+		<script type='text/javascript' src='./common/js/jquery.timers.js'></script>
 		<script type='text/javascript' src='./common/js/jwplayer.js'></script>
 		<script type='text/javascript' src='./common/js/nivoslider.js'></script>
 		<script type='text/javascript' src='./common/js/jcarousel.js'></script>
@@ -55,11 +56,16 @@
 							type:'POST',
 							data:{
 								title:$("#editor-article-title").attr("value"),
-								//content:$("#editor-content").val().replace(/[\r]/g,"").replace(/[\n]/g,"<br>")
-								content:$("#editor-content").val()
+								content:$("#editor-content").val().replace(/[\r]/g,"").replace(/[\n]/g,"<br>")
+								//content:$("#editor-content").val()
 							},
 							success:function(data){
-								$("#blog-post-mask").hide();
+								//setTimeout("saveSuccess",2000);		
+								$(this).oneTime(2000,function(){
+									$("#blog-post-mask").hide();
+									$("#editor-content").val('');
+									$("#editor-article-title").attr("value",'文章标题');
+								});
 							},
 							complete:function(){
 								//alert('complete!');
@@ -81,6 +87,7 @@
 							height:'400px'
 						},'slow',function(){
 							$('.open-editor-btn a').css('background-image','url("./common/css/themes/styling/img/arrow-up.png")');
+							$('.blog-post').show();
 						});
 					}
 					else{
@@ -90,6 +97,7 @@
 							height:'0px'
 						},'slow',function(){
 							$('.open-editor-btn a').css('background-image','url("./common/css/themes/styling/img/arrow-next.png")');
+							$('.blog-post').hide();
 						});					
 					}
 				});
@@ -127,7 +135,31 @@
 					</nav>
 				</div>
 			</header>
-			<div class="editor-panel" ></div>
+			<div class="editor-panel" >
+						<div class="blog-post">
+							<div class="blog-post-mask"  id="blog-post-mask">
+								<span class="loading"></span>
+							</div>
+							<div class="text-editor" >
+								<div>
+									<input id="editor-article-title" type="text" style="width:100%;" onblur="this.value=(this.value=='') ? '文章标题' : this.value;" onfocus="this.value=(this.value=='文章标题') ? '' : this.value;" value="文章标题" tabindex="1" name="posttitle">
+								</div>
+								<div style="margin:15px 0 15px 0;" >
+									<textarea id="editor-content" cols="63" rows="12"></textarea>
+								</div>
+								<div>
+									<input type="text" style="width:100%;" onblur="this.value=(this.value=='') ? '添加标签' : this.value;" onfocus="this.value=(this.value=='添加标签') ? '' : this.value;" value="添加标签">
+								</div>
+								<div class="btn-panel" >
+									<input id="blog-submit" type="submit" value="发布"　tabindex="3" style="font-size:14px;float:right;margin:12px -12px 0 0;width:60px;height:30px;" > 
+									<input id="blog-preview" type="submit" value="预览"　tabindex="3" style="font-size:14px;float:right;margin:12px 5px 0 0;width:60px;height:30px;" >
+									<input id="blog-savecg" type="submit" value="保存草稿"　tabindex="3" style="font-size:14px;float:right;margin:12px 5px 0 0;width:70px;height:30px;" >
+									<input id="blog-cancel" type="submit" value="取消"　tabindex="3" style="font-size:14px;float:left;margin:12px 0px 0 0;width:60px;height:30px;" >
+								</div>
+							</div>
+							<div class="option-editor" ></div>	
+						</div>
+			</div>
 			<div class="open-editor-btn" >
 				<a></a>
 			</div>
@@ -138,20 +170,7 @@
 						<section>		
 							<!--div class="blog-post-mask"  id="blog-post-mask">
 								<span class="loading"></span>
-							</div-->
-							<!--div class="blog-post" >
-								<div>
-									<input id="editor-article-title" type="text" style="width:89.6%;" onblur="this.value=(this.value=='') ? '文章标题' : this.value;" onfocus="this.value=(this.value=='文章标题') ? '' : this.value;" value="文章标题" tabindex="1" name="posttitle">
-								</div>
-								<div style="margin:15px 0 5px 0;" >
-									<textarea id="editor-content" cols="70" rows="4"></textarea>
-								</div>
-								<div>
-									<input type="text" style="width:50%;" onblur="this.value=(this.value=='') ? '添加标签' : this.value;" onfocus="this.value=(this.value=='添加标签') ? '' : this.value;" value="添加标签">
-									<input id="blog-submit" type="submit" value="发布"　tabindex="3" style="float:right;margin:2px 54px 0 0;" > 
-								</div>
-							</div-->			
-							<!--<div class="sep"></div>-->										
+							</div-->									
 							<?php					
 							$result=mysql_query("select * from g_homepage_article order by ts desc");
 							while($row=mysql_fetch_array($result)){
@@ -403,5 +422,5 @@
 </body>
 </html>
 <!-- Hosting24 Analytics Code -->
-<script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
+<!-->script type="text/javascript" src="http://stats.hosting24.com/count.php"></script-->
 <!-- End Of Analytics Code -->
